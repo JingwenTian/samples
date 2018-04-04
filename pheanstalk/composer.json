@@ -1,0 +1,6 @@
+{
+    "require": {
+        "pda/pheanstalk": "^3.1",
+        "workerman/workerman": "^3.5"
+    }
+}

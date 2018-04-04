@@ -1,0 +1,16 @@
+{
+  "name": "eventmosh/ea-sdk-php",
+  "description": "活动易服务端统计埋点SDK",
+  "type": "library",
+  "authors": [
+    {
+      "name": "JingwenTian",
+      "email": "mini.mosquitor@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "minimum-stability": "stable"
+}
