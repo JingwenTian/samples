@@ -1,0 +1,13 @@
+{
+    "name": "jing/monolog",
+    "require": {
+        "monolog/monolog": "1.23",
+        "swiftmailer/swiftmailer": "^6.0"
+    },
+    "authors": [
+        {
+            "name": "JingwenTian",
+            "email": "mini.mosquitor@gmail.com"
+        }
+    ]
+}
