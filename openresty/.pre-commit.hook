@@ -1,0 +1,27 @@
+#########################################################################
+# File Name: pre-commit
+# Author: jingwentian
+# Desc: Verifies that all files in the worktree follow our codestyle standards.
+#
+#
+# cp .pre-commit.hook .git/hooks/pre-commit; chmod 700 .git/hooks/pre-commit
+#########################################################################
+#!/bin/bash
+
+lua_files=$(git status -s|awk '{if (($1=="M"||$1=="A") && $2 ~ /.lua$/)print $2;}')
+
+if [[ "$lua_files" != "" ]]; then
+    result=$(luacheck $lua_files)
+
+    if [[ "$result" =~ .*:.*:.*: ]]; then
+        echo "$result"
+        echo ""
+        exec < /dev/tty
+        read -p "Abort commit?(Y/n)"
+
+        if [[ "$REPLY" == y* ]] || [[ "$REPLY" == Y* ]]; then
+            echo "Abort commit"
+            exit 1
+        fi
+    fi
+fi
