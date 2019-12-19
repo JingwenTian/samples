@@ -1,0 +1,5 @@
+{
+    "require": {
+        "viest/php-ext-xlswriter-ide-helper": "dev-master"
+    }
+}
